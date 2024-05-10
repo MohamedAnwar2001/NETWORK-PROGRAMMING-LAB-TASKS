@@ -27,26 +27,12 @@ def reset():
     global flag, turn
     flag = 1
     turn = 1
-    # Reset button texts to empty
-    btn1["text"] = " "
-    btn2["text"] = " "
-    btn3["text"] = " "
-    btn4["text"] = " "
-    btn5["text"] = " "
-    btn6["text"] = " "
-    btn7["text"] = " "
-    btn8["text"] = " "
-    btn9["text"] = " "
-    # Reset button colors to black
-    btn1.config(bg='#212121')
-    btn2.config(bg='#212121')
-    btn3.config(bg='#212121')
-    btn4.config(bg='#212121')
-    btn5.config(bg='#212121')
-    btn6.config(bg='#212121')
-    btn7.config(bg='#212121')
-    btn8.config(bg='#212121')
-    btn9.config(bg='#212121')
+    
+    # Iterate over the buttons and reset their text and colors
+    for btn in [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]:
+        btn["text"] = " "
+        btn.config(bg='#212121')
+
 # Functions to handle button clicks for each grid cell
 def clicked1():
     global turn
@@ -235,4 +221,3 @@ reset_btn.grid(column=1, row=4, columnspan=3, pady=10)
 
 # Start the main event loop
 window.mainloop()
-
